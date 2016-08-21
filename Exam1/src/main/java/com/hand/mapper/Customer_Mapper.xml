@@ -5,15 +5,28 @@
 
 <mapper namespace="com.hand.mapper.CustomerMapper">
 	<select id="select" resultType="com.hand.dto.Customer">
-		select * from customer order by customer_id desc
+		select * from customer order by
+		customer_id desc
 	</select>
 	<select id="find" resultType="com.hand.dto.Customer">
-		select * from customer where first_name = #{first_name}
+		select * from customer where
+		first_name = #{first_name}
 	</select>
+	<delete id="delete" parameterType="com.hand.dto.Customer">
+		delete from customer where
+		customer_id = #{customer_id}
+	</delete>
 
 	<insert id="add" parameterType="com.hand.dto.Customer">
 		INSERT INTO customer (store_id,
 		first_name,last_name,email,address_id,create_date) VALUES
 		(1,#{first_name},#{last_name},#{email},#{address_id},#{create_date})
 	</insert>
+	<update id="update" parameterType="com.hand.dto.Customer">
+		update customer set
+		first_name = #{first_name},
+		last_name = #{last_name},
+		email = #{email}
+		where customer_id = #{customer_id}
+	</update>
 </mapper>

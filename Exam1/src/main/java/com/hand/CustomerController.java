@@ -21,31 +21,26 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@RequestMapping(value="/logins",method = RequestMethod.POST)
-	public ModelAndView loginCheck(@RequestParam("first_name")String name,@RequestParam("last_name")String password,Model model,HttpSession session){
-		ModelAndView modelAndView;
+	public String loginCheck(@RequestParam("first_name")String name,@RequestParam("last_name")String password,Model model,HttpSession session){
 		System.out.println(name+"..."+password);
 		if (name.equals("")||password.equals("")) {
 			model.addAttribute("msg","用户名或密码不能为空");
-			modelAndView = new ModelAndView("login");
-			return modelAndView;
+			return "login";
 		}else {
 			Customer customer = customerService.find(name);
 			System.out.println("customer");
 			if (customer==null) {
-				System.out.println("用户名错误");
-				model.addAttribute("msg","用户名错误");
-				modelAndView = new ModelAndView("login");
-				return modelAndView;
+				System.out.println("yonghumingcuowu");
+				model.addAttribute("msg","用户名或密码错误");
+				return "login";
 			}else{
 				if (customer.getLast_name().equals(password)) {
-					modelAndView = new ModelAndView("success");
-					model.addAttribute("name",name);
-					session.setAttribute("name", name);
-					return modelAndView;
+//					model.addAttribute("name",name);
+					session.setAttribute("sessionname", name);
+					return "success";
 				}else{
-					modelAndView = new ModelAndView("login");
-					model.addAttribute("msg","密码错误");
-					return modelAndView;
+					model.addAttribute("msg","用户名或密码错误");
+					return "login";
 				}
 			}
 			

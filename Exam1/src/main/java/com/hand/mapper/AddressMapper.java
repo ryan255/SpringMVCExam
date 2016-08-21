@@ -1,8 +1,11 @@
 package com.hand.mapper;
 
+import java.util.List;
+
 import com.hand.dto.Address;;
 
 public interface AddressMapper {
+	public List<Address> select();
 	
 	public Address find(Integer address_id);
 

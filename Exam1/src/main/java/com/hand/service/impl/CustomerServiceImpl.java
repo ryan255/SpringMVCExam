@@ -24,11 +24,6 @@ public class CustomerServiceImpl implements CustomerService {
 		mapper.add(customer);
 	}
 
-	public void delete(Customer customer) {
-		mapper.delete(customer);
-
-	}
-
 	public void update(Customer customer) {
 		// TODO Auto-generated method stub
 		mapper.update(customer);
@@ -48,6 +43,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> select() {
 		// TODO Auto-generated method stub
 		return mapper.select();
+	}
+
+
+	public void delete(int customer_id) {
+		mapper.delete(customer_id);
 	}
 
 

@@ -12,7 +12,7 @@ public interface CustomerMapper {
 
 	public void add(Customer customer);
 
-	public void delete(Customer customer);
+	public void delete(int customer_id);
 
 	public void update(Customer customer);
 }

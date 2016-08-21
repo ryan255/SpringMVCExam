@@ -129,6 +129,12 @@
 									<td>${customer.last_name }</td>
 									<td>${customer.email }</td>
 									<td>${customer.address_id }</td>
+									<td><a
+										href="http://localhost:8080/SpringMVCExam/delCu?id=${customer.customer_id }">del</a>
+									</td>
+									<td><a
+										href="http://localhost:8080/SpringMVCExam/upCu?firstname=${customer.first_name }&lastname=${customer.last_name }&email=${customer.email }&id=${customer.customer_id }">edit</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</table>

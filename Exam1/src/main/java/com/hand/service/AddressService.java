@@ -1,8 +1,11 @@
 package com.hand.service;
 
+import java.util.List;
+
 import com.hand.dto.Address;;
 
 public interface AddressService {
+	public List<Address> select();
 	
 	public Address find(Integer address_id);
 

@@ -8,13 +8,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>登录</title>
+<style type="text/css">
+body {
+    font-family: sans-serif;
+     
+    background-color: #323B55;
+    background-image: -webkit-linear-gradient(bottom, #323B55 0%, #424F71 100%);
+    background-image: -moz-linear-gradient(bottom, #323B55 0%, #424F71 100%);
+    background-image: -o-linear-gradient(bottom, #323B55 0%, #424F71 100%);
+    background-image: -ms-linear-gradient(bottom, #323B55 0%, #424F71 100%);
+    background-image: linear-gradient(bottom, #323B55 0%, #424F71 100%);
+}
+#slick-login {
+    width: 220px;
+    height: 155px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -110px;
+    margin-top: -75px;
+}
+</style>
 </head>
 <body>
 <!--logo-->
 <div>
     <div class="bd-style">
         <label class="glyphicon glyphicon-asterisk">
-            吴瀚元－10971
+            10971-吴瀚元
         </label>
     </div>
 </div>
@@ -25,7 +46,7 @@
 <div>
     <div>电影租赁管理系统</div>
     <div>
-        <form action="/SpringMVCExam/logins" method="POST">
+        <form action="/SpringMVCExam/logins" method="POST" id="slick-login">
        <div>${msg}</div> 
             <div>
             
