@@ -4,6 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
   <context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:ApplicationContext.xml</param-value>
@@ -22,6 +23,10 @@
 		</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+
+
+
+
 	<servlet-mapping>
 		<servlet-name>HelloWeb</servlet-name>
 		<url-pattern>/</url-pattern>
