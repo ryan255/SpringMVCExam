@@ -2,7 +2,7 @@ package com.hand.dto;
 
 public class Page {
 	private int currentPage=1;
-    private int rowsPerPage=3;
+    private int rowsPerPage=10;
     private int rowsCount;
     private int totalPage;
     private String username_cx;

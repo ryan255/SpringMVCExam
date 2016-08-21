@@ -3,13 +3,9 @@ package com.hand;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,11 +19,6 @@ import com.hand.service.CustomerService;
 public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
-
-//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public ModelAndView city() {
-//		return new ModelAndView("login", "command", new Customer());
-//	}
 	
 	@RequestMapping(value="/logins",method = RequestMethod.POST)
 	public ModelAndView loginCheck(@RequestParam("first_name")String name,@RequestParam("last_name")String password,Model model,HttpSession session){
@@ -47,7 +38,7 @@ public class CustomerController {
 				return modelAndView;
 			}else{
 				if (customer.getLast_name().equals(password)) {
-					modelAndView = new ModelAndView("cityresult");
+					modelAndView = new ModelAndView("success");
 					model.addAttribute("name",name);
 					session.setAttribute("name", name);
 					return modelAndView;
